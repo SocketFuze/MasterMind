@@ -1,0 +1,15 @@
+function change_tax_labels() {
+	$new_labels = array(
+		'category' => 'Topics',
+		'post_tag' => 'Facility',
+	);
+
+	foreach ( $new_labels as $tax_name => $label ) {
+		$tax_obj = get_taxonomy( $taxonomy );
+
+		$tax_obj->labels->name = $tax_obj->label = $label;
+	}
+}
+add_action( 'init', 'change_tax_labels' );
+
+http://wp.tutsplus.com/tutorials/getting-loopy-ajax-powered-loops-with-jquery-and-wordpress/
